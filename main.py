@@ -1,5 +1,6 @@
 from github import Github
 import pathlib
+import os
 
 def calc_lang(prog_lang,file):
 	file_extension=pathlib.Path(file.name).suffix
@@ -24,8 +25,8 @@ def calculate(repo,dict):
 			contents.extend(repo.get_contents(file_content.path))
 		else:
 			calc_lang(prog_lang,file_content)
-	dict[repo.name+" "+max(prog_lang.iteritems(), key=operator.itemgetter(1))[0]]=repo.stargazers_count
-	print(repo.name+"	"+max(prog_lang.iteritems(), key=operator.itemgetter(1))[0]+"	"+repo.stargazers_count)
+	dict[repo.name+"	"+max(prog_lang, key = prog_lang.get)]=repo.stargazers_count
+	print(repo.name+"	"+max(prog_lang, key = prog_lang.get)+"	"+str(repo.stargazers_count))
 	print('ended calculating')
 
 def sort_repos(dict,org):
@@ -33,7 +34,7 @@ def sort_repos(dict,org):
 		calculate(repo,dict)
 
 def main():
-	g=Github(os.getenv(ACCESS_TOKEN))
+	g=Github(os.getenv('ACCESS_TOKEN'))
 	org=g.get_organization("kubernetes")
 	repo_dict={}
 	sort_repos(repo_dict,org)
