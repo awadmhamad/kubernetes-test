@@ -33,7 +33,7 @@ def sort_repos(dict,org):
 		calculate(repo,dict)
 
 def main():
-	g=Github("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")#(os.getenv(ACCESS_TOKEN))
+	g=Github(os.getenv(ACCESS_TOKEN))
 	org=g.get_organization("kubernetes")
 	repo_dict={}
 	sort_repos(repo_dict,org)
