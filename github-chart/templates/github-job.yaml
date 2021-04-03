@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: github-job
+spec:
+  backoffLimit: 10
+  activeDeadlineSeconds: 500
+  template:
+    spec:
+      containers:
+        - name: github-app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+      restartPolicy: OnFailure
+      initContainers:
+        - name: init-postgresql
+          image: gcr.io/google-containers/busybox
+          command: ['sh', '-c', "until nslookup postgres; do echo waiting for postgresdb to be created...; sleep 2; done"]
