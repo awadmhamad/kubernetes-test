@@ -10,6 +10,7 @@ prerequisites:
 
 
 installation:
+
 1)helm repo add github-repo https://awadmhamad.github.io/github-repo
 2)helm repo update
 3)helm install github-app github-repo/github-chart --set accessToken="$your_generated_token"
