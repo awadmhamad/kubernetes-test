@@ -42,5 +42,9 @@ validation:
 5) run '\dt' to validate githu table exists.
 6) run 'SELECT * FROM github;' to see the table of repos names, stars, and primary programming language.
 
+script.sh:
 
+1)this bash script finds and prints the biggest 10 files in a system.
+
+2)to run it, clone this repo , and run 'bash script.sh'.
 
