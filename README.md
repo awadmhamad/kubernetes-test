@@ -23,8 +23,8 @@ helm values.yaml:
 
 2) in values.yaml file there's a default values of postgres db that is installed by the helm chart:
 
-postgres:
 
+postgres:
     database: "postgresdb"
     user: "postgresadmin"
     password: "admin123"
@@ -34,7 +34,7 @@ postgres:
   you can change these values by overriding these values using --set option with the helm installation.
 
 validation:
-1) kubectl get pods will show you two new generated pods, one starts with github-job-XXXX and the other one starts with postgres-XXX
+1) 'kubectl get pods' will show you two new generated pods, one starts with github-job-XXXX and the other one starts with postgres-XXX
 2) use 'kubectl logs -f github-job-XXXX' to see the logs of calculating the repos and the list of repos sorted in console.
 3) use 'kubectl exec -it postgres-XXX bash' to connect to postgresql pod.
 4) run 'psql -h localhost -U postgresadmin postgresdb' to connect to the database
