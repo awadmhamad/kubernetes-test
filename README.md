@@ -12,18 +12,25 @@ prerequisites:
 installation:
 
 1)helm repo add github-repo https://awadmhamad.github.io/github-repo
+
 2)helm repo update
+
 3)helm install github-app github-repo/github-chart --set accessToken="$your_generated_token"
 
 helm values.yaml:
+
 1) you will have to provide access token to override the empty accessToken in values.yaml files in github-chart helm chart as shown in step 3 above(installation).
+
 2) in values.yaml file there's a default values of postgres db that is installed by the helm chart:
-  postgres:
+
+postgres:
+
     database: "postgresdb"
     user: "postgresadmin"
     password: "admin123"
     host: "postgres"
     port: "5432"
+  
   you can change these values by overriding these values using --set option with the helm installation.
 
 validation:
