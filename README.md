@@ -25,6 +25,7 @@ helm values.yaml:
 
 
       postgres:
+            
             database: "postgresdb"
             user: "postgresadmin"
             password: "admin123"
