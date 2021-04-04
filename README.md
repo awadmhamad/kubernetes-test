@@ -39,7 +39,7 @@ validation:
 2) use 'kubectl logs -f github-job-XXXX' to see the logs of calculating the repos and the list of repos sorted in console.
 3) use 'kubectl exec -it postgres-XXX bash' to connect to postgresql pod.
 4) run 'psql -h localhost -U postgresadmin postgresdb' to connect to the database
-5) run '\dt' to validate githu table exists.
+5) run '\dt' to validate github table exists.
 6) run 'SELECT * FROM github;' to see the table of repos names, stars, and primary programming language.
 
 script.sh:
