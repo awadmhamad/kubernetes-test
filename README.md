@@ -4,7 +4,7 @@ Kubernetes-test repo provide a python script that uses pygithub lib to list all 
 prerequisites:
 1) kubectl installed.
 2) helm installed on your machine.
-3) Kubernetes cluster(either minikuber or any cloud provider/on-premises kubernetes cluster).
+3) Kubernetes cluster(either minikube or any cloud provider/on-premises kubernetes cluster).
 4) github user , you will need to generate access token, you can use github docs to see how to generate token.
       https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
 
