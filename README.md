@@ -44,7 +44,7 @@ validation:
 
 script.sh:
 
-1)this bash script finds and prints the biggest 10 files in a system.
+1)this shell script finds and prints the biggest 10 files in a system.
 
 2)to run it, clone this repo , and run 'bash script.sh'.
 
